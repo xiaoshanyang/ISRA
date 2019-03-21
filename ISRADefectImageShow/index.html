@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ISRA纸病处理</title>    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="JS/respond.min.js"></script>
+        <script src="JS/html5shiv.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap-editable.css">
+    <!-- choose a theme file -->
+    <link rel="stylesheet" type="text/css" href="CSS/theme.default.css" >
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/iconfont.css">
+    <!--layui-->
+    <link rel="stylesheet" type="text/css" href="CSS/layer.css">    
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">    
+    
+    <script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="JS/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="JS/bootstrap-editable.min.js"></script>
+    <script type="text/javascript" src="JS/bootstrap-select.js"></script>
+    <script type="text/javascript" src="JS/jquery.blockUI.js"></script>
+    <!--layui-->
+    <script type="text/javascript" src="JS/layer.js"></script>
+    <!-- load jQuery and tablesorter scripts -->
+    <!--<script type="text/javascript" src="JS/jquery-latest.min.js"></script>-->
+    <script type="text/javascript" src="JS/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="JS/jquery.localize.js"></script>
+
+    <script type="text/javascript" src="JS/common.js"></script>
+    <script type="text/javascript" src="JS/ISRADefectInfo.js"></script>
+    
+
+
+</head>
+<body>
+    <div class="defectContent">
+        <div>
+           <h3 data-localize="PaperFaultRecord">纸病记录</h3>
+        </div>
+        
+        <div>
+            <table id="defectList" class="table table-striped table-bordered table-hover tablesorter">
+                <thead>
+                    <tr>
+                        <th width="30px" rowspan="2"></th>
+                        <th width="80px" rowspan="2" data-localize="rollNum">下卷卷号</th>
+                        <th width="125px" rowspan="2" data-localize="defectImage">缺陷图片</th>
+                        <th width="80px" rowspan="2" data-localize="startMeter">开始米数</th>
+                        <th width="80px" rowspan="2" data-localize="endMeter">结束米数</th>
+                        <th width="80px" rowspan="2" data-localize="defectLength">纸病长度</th>
+                        <th width="120px" rowspan="2" data-localize="defectCode">纸病代码</th>
+                        <!--<th width="80px">代码描述</th>-->
+                        <th width="95px" rowspan="2" data-localize="procedure">处理工序</th>
+                        <th colspan="11" width="330px" data-localize="webNum">幅号</th>
+                        <th width="100px" rowspan="2" data-localize="stopCode">停机代码</th>
+                        <th width="180px" rowspan="2" data-localize="stopCode" class="stopCode hidden">停机代码</th>
+                        <!--<th colspan="10" width="300px">幅号</th>-->
+                        <th width="150px" rowspan="2" data-localize="remark">备注</th>
+
+                        <th width="150px" rowspan="2" data-localize="dWidth" class="hidden">宽</th>
+                        <th width="150px" rowspan="2" data-localize="dLength" class="hidden">高</th>
+                        <th width="150px" rowspan="2" data-localize="dArea" class="hidden">纸病面积</th>
+                        <th width="150px" rowspan="2" data-localize="dTime" class="hidden">纸病获取时间</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>All</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <ul class="opt">
+                <li><input type="button" id="Refresh" data-localize="refresh" value="刷新" /></li>
+                <li><input type="button" id="NewRecord" data-localize="newDefectRecord" value="新增" /></li>
+                <li><input type="button" id="Merge" data-localize="mergeDefectInfo" value="合并" /></li>
+                <li><input type="button" id="Add" data-localize="addDefectRecord" value="添加" /></li>
+                <li><input type="button" id="Modify" data-localize="modifyDefectRecord" value="修改" /></li>
+                <li><input type="button" id="Delete" data-localize="deleteDefectRecord" value="删除" /></li>
+                <li><input type="button" id="Report" data-localize="complaint" value="投诉" /></li>
+            </ul>
+        </div>
+        <div>
+            <table id="dealDefectList" class="table table-striped table-bordered table-hover tablesorter">
+                <thead>
+                    <tr>
+                        <th width="30px" rowspan="2"></th>
+                        <th width="80px" rowspan="2" data-localize="rollNum">下卷卷号</th>
+                        <th width="125px" rowspan="2" data-localize="defectImage">缺陷图片</th>
+                        <th width="80px" rowspan="2" data-localize="startMeter">开始米数</th>
+                        <th width="80px" rowspan="2" data-localize="endMeter">结束米数</th>
+                        <th width="80px" rowspan="2" data-localize="defectLength">纸病长度</th>
+                        <th width="120px" rowspan="2" data-localize="defectCode">纸病代码</th>
+                        <th width="95px" rowspan="2" data-localize="procedure">处理工序</th>
+                        <th width="3000px" colspan="10" data-localize="webNum">幅号</th>
+                        <th width="180px" rowspan="2" data-localize="stopCode" >停机代码</th>
+                        <th width="100px" rowspan="2" data-localize="stopCode" class="stopCodeDB hidden">停机代码</th>
+                        <th width="150px" rowspan="2" data-localize="remark">备注</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="domMessage" style="display:none"></div>
+
+    <div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
+        <div id="innerdiv" style="position:absolute;">
+            <img id="bigimg" style="border:5px solid #fff;" src="" />
+        </div>
+    </div>
+</body>
+</html>
+

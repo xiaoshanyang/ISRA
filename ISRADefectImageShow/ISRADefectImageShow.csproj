@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE5FE1FA-216F-4E11-88C0-470B4C716DBB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ISRADefectImageShow</RootNamespace>
+    <AssemblyName>ISRADefectImageShow</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.8.7.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.7\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\bootstrap-editable.css" />
+    <Content Include="CSS\bootstrap-select.min.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\iconfont.css" />
+    <Content Include="CSS\layer.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\theme.default.css" />
+    <Content Include="DefectImageByDoctor.html" />
+    <Content Include="DefectImageWebAll.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="index.html" />
+    <Content Include="JS\bootstrap-editable.min.js" />
+    <Content Include="JS\bootstrap-select.js" />
+    <Content Include="JS\bootstrap.min.js" />
+    <Content Include="JS\common.js" />
+    <Content Include="JS\defectDoctor.js" />
+    <Content Include="JS\html5shiv.min.js" />
+    <Content Include="JS\ISRADefectInfo.js" />
+    <Content Include="JS\jquery-1.11.3.min.js" />
+    <Content Include="JS\jquery-latest.min.js" />
+    <Content Include="JS\jquery.blockUI.js" />
+    <Content Include="JS\jquery.localize.js" />
+    <Content Include="JS\jquery.tablesorter.js" />
+    <Content Include="JS\layer.js" />
+    <Content Include="JS\MoveDefectImage.js" />
+    <Content Include="JS\respond.min.js" />
+    <Content Include="JS\StopCodeRelation.js" />
+    <Content Include="MoveDefectImage.html" />
+    <Content Include="StopCodeRelation.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataServer\DataBase.cs" />
+    <Compile Include="DataServer\DataOpt.cs" />
+    <Compile Include="DataServer\MyHttpRequest.cs" />
+    <Compile Include="DataServer\JsonData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DeletePaperFaultHandler.ashx.cs">
+      <DependentUpon>DeletePaperFaultHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GetDefectImageAllWebNumHandler.ashx.cs">
+      <DependentUpon>GetDefectImageAllWebNumHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GetDefectImageByPfIDHandler.ashx.cs">
+      <DependentUpon>GetDefectImageByPfIDHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GetPageDefectInfoHandler.ashx.cs">
+      <DependentUpon>GetPageDefectInfoHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GetStopCodeListHandler.ashx.cs">
+      <DependentUpon>GetStopCodeListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ModifyPaperFaultInfoHandler.ashx.cs">
+      <DependentUpon>ModifyPaperFaultInfoHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\MoveDefectImageToServerHandler.ashx.cs">
+      <DependentUpon>MoveDefectImageToServerHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\PutDefectInfoToDBHandler.ashx.cs">
+      <DependentUpon>PutDefectInfoToDBHandler.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Services\GetPageDefectInfoHandler.ashx" />
+    <Content Include="Services\PutDefectInfoToDBHandler.ashx" />
+    <Content Include="Services\DeletePaperFaultHandler.ashx" />
+    <Content Include="i18n\lang-en.json" />
+    <Content Include="i18n\lang-zh.json" />
+    <Content Include="Services\GetDefectImageAllWebNumHandler.ashx" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Services\GetDefectImageByPfIDHandler.ashx" />
+    <Content Include="Services\ModifyPaperFaultInfoHandler.ashx" />
+    <Content Include="Services\MoveDefectImageToServerHandler.ashx" />
+    <Content Include="Services\GetStopCodeListHandler.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CSS\images\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65486</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65486/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

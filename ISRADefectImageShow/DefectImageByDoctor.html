@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>缺陷图片</title>
+    <style type="text/css">
+        body {
+            font-size: 20px;
+        }
+        ul li {
+            list-style-type: none;
+            float: left;
+            margin-left: 5px;
+        }
+        ul {
+            overflow: hidden;
+            width: 610px;
+            margin: auto;
+            padding: 0px;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+        }
+        .imgarea {
+            margin-top:10px;
+        }
+        .imgtype {
+            text-align: center;
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+        .defectParams{
+            margin-top:10px;
+        }
+        .defectParams .defectDes{
+            width: 163px;
+        }
+        #Close{
+            font-size:25px;
+            width:100px;
+        }
+    </style>
+    <script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="JS/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="JS/jquery.localize.js"></script>
+    <script type="text/javascript" src="JS/common.js"></script>
+    <script type="text/javascript" src="JS/defectDoctor.js"></script>
+</head>
+<body>
+    <div class="imgarea">
+        <ul>
+            <li>
+                <p class="imgtype" data-localize="moduleImage">模板图片</p>
+                <img id="sourceImg" src="" alt="" class="pimg" />
+                
+            </li>
+            <li>
+                <p class="imgtype" data-localize="defectImage">缺陷图片</p>
+                <img id="defectImg" src="" alt="" class="pimg" />
+                
+            </li>
+        </ul>
+    </div>
+    <div class="defectParams">
+        <ul>
+            <li class="defectDes"><span data-localize="dLength">长:</span><span id="dLength"></span></li>
+            <li class="defectDes"><span data-localize="dWidth">宽:</span><span id="dWidth"></span></li>
+            <li class="defectDes"><span data-localize="dArea">面积:</span><span id="dArea"></span></li>
+            <li><input type="button" id="Close" data-localize="close" value="关闭" /></li>
+        </ul>
+    </div>
+
+    <div id="domMessage" style="display:none"></div>
+
+    <div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
+        <div id="innerdiv" style="position:absolute;">
+            <img id="bigimg" style="border:5px solid #fff;" src="" />
+        </div>
+    </div>  
+</body>
+</html>

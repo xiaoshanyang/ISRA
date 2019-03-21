@@ -1,0 +1,56 @@
+﻿
+ul li{
+list-style-type:none;
+}
+
+.opt{
+    text-align: center;
+}
+
+.opt li{
+    /*float:right;*/
+    display:inline-block;
+    margin-left:20px;
+    font-size:20px;
+}
+/*#NewRecord {
+    margin-left: -1000px;
+}
+#Refresh{
+    margin-left: -850px;
+}*/
+
+.defectContent{
+    margin:auto;
+    width:1680px;
+}
+
+.table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th,.table>thead>tr>td,.table>thead>tr>th
+{
+    padding:4px;
+    line-height:1.42857143;
+    vertical-align:middle;
+    border-top:1px solid #ddd;
+    text-align:center;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .selectprocess{
+    width:80px;
+}
+
+.bootstrap-select.show-tick .dropdown-menu li a span.text {
+    margin-right: 10px;
+}
+
+#dealDefectList tr td.showLeft{
+    text-align:left;
+}
+
+.saveBtn{
+    background-color:yellow;
+    border-color: yellow;
+}
+
+.hidden{
+    display:none;
+}
